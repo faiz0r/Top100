@@ -1,0 +1,17 @@
+<div class="card mb-4 shadow-sm">
+    <img [src]="this.data['im:image'][2].label">
+    <div class="card-body">
+        <strong class="card-title">{{this.data['im:name'].label}}</strong>
+        <p class="card-text"><small>Artist: </small>{{this.data['im:artist'].label}}<br>
+            <small>Genre: </small>{{this.data.category.attributes.label}}<br>
+            <small>Released: </small>{{this.data['im:releaseDate'].label | date}}<br>
+            <small>{{this.data.rights.label}}</small>
+        </p>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <button class="btn btn-sm btn-outline-secondary" type="button" (click)="onSelect(this.data.category.attributes['im:id'])" routerLink="album">{{this.data['im:itemCount'].label}} Songs</button>
+            </div>
+            <small class="text-muted">{{this.data['im:price'].label}}</small>
+        </div>
+    </div>
+</div>
